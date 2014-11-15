@@ -11,10 +11,13 @@
 |
 */
 
+
 Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+
 
  #/app/routes.php
 Route::get('/debug', function() {
