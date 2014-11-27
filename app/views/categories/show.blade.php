@@ -1,19 +1,18 @@
 @section('main')
+	
 
-	<h2>{{ $categories->name }}</h2>
-	@if ( !$categories->recipes->count() )
-		Your Categories has no recipes.
+	<h2>{{ $category->name }}</h2>
+	@if ( !$category->recipes->count() )
+		This Category has no recipes.
 	@else
 		<ul>
-			@foreach( $categories->recipes as $recipes )
+			@foreach( $category->recipes as $recipe )
 				<li>
-				
-				<a href="{{ route('categories.recipes.show', [$categories->description, $recipes->name]) }}">{{ $recipes->name }}</a>
+					<a href="{{ route('categories.recipes.show', [$category->name, $recipe->name]) }}">{{ $recipe->name }}</a>
+					(
+						{{ Form::open(array('class' => 'inline', 'method' => 'DELETE', 'route' => array('categories.recipes.destroy', $category->name, $recipe->name))) }}
+							{{ link_to_route('categories.recipes.edit', 'Edit', array($category->name, $recipe->name), array('class' => 'btn btn-info')) }},
 
-				(
-						{{ Form::open(array('class' => 'inline', 'method' => 'DELETE', 'route' => array('categories.recipes.destroy', $categories->description, $recipes->name))) }}
-							{{ link_to_route('categories.recipes.edit', 'Edit', array($categories->description, $recipes->name), array('class' => 'btn btn-info')) }},
- 
 							{{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
 						{{ Form::close() }}
 					)
@@ -21,9 +20,9 @@
 			@endforeach
 		</ul>
 	@endif
+
 	<p>
 		{{ link_to_route('categories.index', 'Back to Categories') }} |
-		{{ link_to_route('categories.recipes.create', 'Create Recipe', $categories->description) }}
+		{{ link_to_route('categories.recipes.create', 'Create Recipe', $category->name) }}
 	</p>
-
 @stop

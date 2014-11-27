@@ -26,26 +26,13 @@ Route::get('/debug', 'DebugController@getDebug');
 Route::resource('users', 'UsersController');
 
 
-/* Category Route 
-Route::resource('categories', 'CategoriesController');
-*/
-
-/* Recipes Route 
-Route::resource('categories.recipes', 'RecipesController');
-*/
-
-// Provide controller methods with object instead of ID
-Route::model('recipes', 'Recipe');
-Route::model('categories', 'Category');
-
-Route::resource('categories', 'CategoriesController');
-Route::resource('categories.recipes', 'RecipesController');
-
 Route::bind('recipes', function($value, $route) {
-	return Recipes::whereName($value)->first();
+	return Recipe::whereName($value)->first();
 });
 Route::bind('categories', function($value, $route) {
-	return Categories::whereName($value)->first();
+	return Category::whereName($value)->first();
 });
 
+Route::resource('categories', 'CategoriesController');
+Route::resource('categories.recipes', 'RecipesController');
 

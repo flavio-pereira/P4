@@ -1,7 +1,7 @@
 <?php
 
 class Recipe extends \Eloquent {
-	protected $fillable = [];
+	protected $fillable = ['category_id','name','recipe'];
 
 	public function categories()
 {

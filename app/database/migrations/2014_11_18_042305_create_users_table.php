@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -23,8 +23,6 @@ class CreateUsersTable extends Migration {
 		Schema::create('categories', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('users_id')->unsigned();
-			$table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
 			$table->string('name');
 			$table->text('description');
 			$table->timestamps();
@@ -33,8 +31,6 @@ class CreateUsersTable extends Migration {
 		Schema::create('recipes', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('users_id')->unsigned();
-			$table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
 			$table->integer('category_id')->unsigned();
 			$table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
 			$table->string('name');

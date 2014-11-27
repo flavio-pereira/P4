@@ -1,7 +1,7 @@
 @section('main')
-	<h2>Edit Recipe "{{ $recipes->name }}"</h2>
- 
-	{{ Form::model($recipes, ['method' => 'PATCH', 'route' => ['categories.recipes.update', $categories->description, $recipes->recipe]]) }}
-		@include('recipes/partials/_form', ['submit_text' => 'Edit Recipes'])
+	<h2>Edit Recipe "{{ $recipe->name }}"</h2>
+
+	{{ Form::model($recipe, ['method' => 'PATCH', 'route' => ['categories.recipes.update', $category->name, $recipe->name]]) }}
+		@include('recipes/partials/_form', ['submit_text' => 'Edit Recipe'])
 	{{ Form::close() }}
 @stop

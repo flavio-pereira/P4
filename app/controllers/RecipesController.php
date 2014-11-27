@@ -8,9 +8,9 @@ class RecipesController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function index(Category $categories)
+	public function index(Category $category)
 	{
-		$this->layout->content = View::make('recipes.index', compact('categories'));
+		$this->layout->content = View::make('recipes.index', compact('category'));
 	}
 
 	/**
@@ -19,10 +19,11 @@ class RecipesController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function create(Category $categories)
+	public function create(Category $category)
 	{
-		$this->layout->content = View::make('recipes.create', compact('categories'));
+		$this->layout->content = View::make('recipes.create', compact('category'));
 	}
+
 
 	/**
 	 * Store a newly created resource in storage.
@@ -30,9 +31,12 @@ class RecipesController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store(Category $categories)
+	public function store(Category $category)
 	{
-		//
+		$input = Input::all();
+		$input['category_id'] = $category->id;
+		Recipe::create( $input );
+		return Redirect::route('categories.show', $category->name)->with('Recipe created.');
 	}
 
 	/**
@@ -42,9 +46,9 @@ class RecipesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show(Category $categories, Recipe $recipes)
+	public function show(Category $category, Recipe $recipe)
 	{
-		 $this->layout->content = View::make('recipes.show', compact('categories', 'recipes'));
+		$this->layout->content = View::make('recipes.show', compact('category', 'recipe'));
 	}
 
 	/**
@@ -54,9 +58,9 @@ class RecipesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit(Recipe $recipes)
+	public function edit(Category $category, Recipe $recipe)
 	{
-		 $this->layout->content = View::make('recipes.edit', compact('recipes'));
+		$this->layout->content = View::make('recipes.edit', compact('category', 'recipe'));
 	}
 
 	/**
@@ -66,9 +70,11 @@ class RecipesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update(Category $categories, Recipe $recipes)
+	public function update(Category $category, Recipe $recipe)
 	{
-		//
+		$input = array_except(Input::all(), '_method');
+		$recipe->update($input);
+		return Redirect::route('categories.recipes.show', [$category->name, $recipe->name])->with('message', 'Recipe updated.');
 	}
 
 	/**
@@ -78,9 +84,10 @@ class RecipesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy(Category $categories, Recipe $recipes)
+	public function destroy(Category $category, Recipe $recipe)
 	{
-		//
+		$recipe->delete();
+		return Redirect::route('categories.show', $category->name)->with('message', 'Recipe deleted.');
 	}
 
 }

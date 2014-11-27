@@ -32,10 +32,14 @@ class CategoriesController extends \BaseController {
 	 *
 	 * @return Response
 	 */
+	
 	public function store()
 	{
-		//
+		$input = Input::all();
+		Category::create( $input );
+		return Redirect::route('categories.index')->with('message', 'Category created');
 	}
+
 
 	/**
 	 * Display the specified resource.
@@ -44,9 +48,9 @@ class CategoriesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show(Category $categories)
+	public function show(Category $category)
 	{
-		$this->layout->content = View::make('categories.show', compact('categories'));
+		$this->layout->content = View::make('categories.show', compact('category'));
 	}
 
 	/**
@@ -56,9 +60,9 @@ class CategoriesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit(Category $categories)
+	public function edit(Category $category)
 	{
-		$this->layout->content = View::make('categories.show', compact('categories'));
+		$this->layout->content = View::make('categories.edit', compact('category'));
 	}
 
 	/**
@@ -68,9 +72,11 @@ class CategoriesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update(Category $categories)
+	public function update(Category $category)
 	{
-		//
+		$input = array_except(Input::all(), '_method');
+		$category->update($input);
+		return Redirect::route('categories.show', $category->name)->with('message', 'Category updated.');
 	}
 
 	/**
@@ -80,9 +86,11 @@ class CategoriesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy(Category $categories)
+	public function destroy(Category $category)
 	{
-		//
+		$category->delete();
+		return Redirect::route('categories.index')->with('message', 'Category deleted.');
 	}
+
 
 }

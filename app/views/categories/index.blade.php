@@ -1,20 +1,19 @@
 @section('main')
-
 <br />
 <br />
 
-<h2>Categories</h2>
+	<h2>Categories</h2>
 	@if ( !$categories->count() )
 		You have no categories
 	@else
 		<ul>
-			@foreach( $categories as $categories )
+			@foreach( $categories as $category )
 				<li>
-					<a href="{{ route('categories.show', $categories->description) }}">{{ $categories->name }}</a>
+					<a href="{{ route('categories.show', $category->name) }}">{{ $category->name }}</a>
 					(
-						{{ Form::open(array('class' => 'inline', 'method' => 'DELETE', 'route' => array('categories.destroy', $categories->description))) }}
-							{{ link_to_route('categories.edit', 'Edit', array($categories->description), array('class' => 'btn btn-info')) }},
- 
+						{{ Form::open(array('class' => 'inline', 'method' => 'DELETE', 'route' => array('categories.destroy', $category->name))) }}
+							{{ link_to_route('categories.edit', 'Edit', array($category->name), array('class' => 'btn btn-info')) }},
+
 							{{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
 						{{ Form::close() }}
 					)
@@ -23,7 +22,5 @@
 		</ul>
 	@endif
 
-	<p>{{ link_to_route('categories.create', 'Create new Category') }}</p>
-
-
+	<p>{{ link_to_route('categories.create', 'Create a new Category') }}</p>
 @stop
