@@ -1,6 +1,13 @@
 <?php
 
-class Recipe extends \Eloquent {
+class Recipe extends \LaravelBook\Ardent\Ardent {
+
+	public static $rules = array(
+		'name'			=> 'required|min:4',
+		'recipe'		=> 'required',
+	);
+
+
 	protected $fillable = ['category_id','name','recipe'];
 
 	public function categories()

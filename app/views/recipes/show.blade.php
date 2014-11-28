@@ -5,9 +5,7 @@
 
 @stop
 
-@section('main')
-<br />
-<br />
+@section('body')
 	<h2> Category: {{ $category->name }} </h2>
 	<h3>Recipe: {{ $recipe->name }}</h3>
 	

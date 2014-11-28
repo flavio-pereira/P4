@@ -1,6 +1,4 @@
-@section('main')
-<br />
-<br />
+@section('body')
 	<h2>Edit Category</h2>
 
 	{{ Form::model($category, ['method' => 'PATCH', 'route' => ['categories.update', $category->name]]) }}

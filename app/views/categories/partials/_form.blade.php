@@ -1,4 +1,4 @@
-{{ HTML::style('css/bootstrap.min.css'); }}
+{{ HTML::style('css/bootstrap.min.css'); }} 
 
 <ul>
 	<li>

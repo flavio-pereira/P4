@@ -35,8 +35,12 @@ class RecipesController extends \BaseController {
 	{
 		$input = Input::all();
 		$input['category_id'] = $category->id;
-		Recipe::create( $input );
-		return Redirect::route('categories.show', $category->name)->with('Recipe created.');
+		$recipe = new Recipe($input);
+ 
+		if ( $recipe->save() )
+			return Redirect::route('categories.show', $category->name)->with('message', 'Recipe created.');
+		else
+			return Redirect::route('categories.recipes.create', $category->name)->withInput()->withErrors( $recipe->errors() );
 	}
 
 	/**
@@ -72,9 +76,13 @@ class RecipesController extends \BaseController {
 	 */
 	public function update(Category $category, Recipe $recipe)
 	{
-		$input = array_except(Input::all(), '_method');
-		$recipe->update($input);
-		return Redirect::route('categories.recipes.show', [$category->name, $recipe->name])->with('message', 'Recipe updated.');
+		$input = Input::all();
+		$recipe->fill($input);
+ 
+		if ( $recipe->updateUniques() )
+			return Redirect::route('categories.recipes.show', [$category->name, $recipe->name])->with('message', 'Recipe updated.');
+		else
+			return Redirect::route('categories.recipes.edit', [$category->name, array_get($recipe->getOriginal(), 'name')])->withInput()->withErrors( $recipe->errors() );
 	}
 
 	/**

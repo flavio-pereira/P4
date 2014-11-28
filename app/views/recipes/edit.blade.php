@@ -1,4 +1,4 @@
-@section('main')
+@section('body')
 	<h2>Edit Recipe "{{ $recipe->name }}"</h2>
 
 	{{ Form::model($recipe, ['method' => 'PATCH', 'route' => ['categories.recipes.update', $category->name, $recipe->name]]) }}

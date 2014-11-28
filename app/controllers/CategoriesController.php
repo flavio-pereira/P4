@@ -36,8 +36,12 @@ class CategoriesController extends \BaseController {
 	public function store()
 	{
 		$input = Input::all();
-		Category::create( $input );
-		return Redirect::route('categories.index')->with('message', 'Category created');
+		$category = new Category($input);
+ 
+		if ( $category->save() )
+			return Redirect::route('categories.index')->with('message', 'Category created.');
+		else
+			return Redirect::route('categories.create')->withInput()->withErrors( $category->errors() );
 	}
 
 
@@ -75,8 +79,12 @@ class CategoriesController extends \BaseController {
 	public function update(Category $category)
 	{
 		$input = array_except(Input::all(), '_method');
-		$category->update($input);
-		return Redirect::route('categories.show', $category->name)->with('message', 'Category updated.');
+		$category->fill($input);
+ 
+		if ( $category->updateUniques() )
+			return Redirect::route('categories.show', $category->name)->with('message', 'Category updated.');
+		else
+			return Redirect::route('categories.edit', array_get($category->getOriginal(), 'name'))->withInput()->withErrors( $category->errors() );
 	}
 
 	/**

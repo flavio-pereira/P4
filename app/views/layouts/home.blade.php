@@ -1,8 +1,7 @@
 @extends('layouts/main')
 
 @section('body')
-    <br />
-    <br />
+    
   <div class="container">
     <h1>Claudia's Recipe</h1>
 

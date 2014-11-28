@@ -1,6 +1,4 @@
-@section('main')
-<br />
-<br />
+@section('body')
 	<h2>Create Category</h2>
 
 	{{ Form::model(new Category, ['route' => ['categories.store']]) }}
