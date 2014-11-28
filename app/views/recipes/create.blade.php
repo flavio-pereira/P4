@@ -1,4 +1,6 @@
 @section('main')
+<br />
+<br />
 	<h2>Create a new Recipe for Category "{{ $category->name }}"</h2>
 
 	{{ Form::model(new Recipe, ['route' => ['categories.recipes.store', $category->name]]) }}

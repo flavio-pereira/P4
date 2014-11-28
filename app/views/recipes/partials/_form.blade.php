@@ -1,3 +1,5 @@
+{{ HTML::style('css/bootstrap.min.css'); }}
+
 <ul>
 	<li>
 		{{ Form::label('name', 'Name:') }}

@@ -1,6 +1,14 @@
+@section('head')
+
+	<link rel="icon" type="image/icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+@stop
+
 @section('main')
 	
-
+<br />
+<br />
 	<h2>{{ $category->name }}</h2>
 	@if ( !$category->recipes->count() )
 		This Category has no recipes.
