@@ -11,6 +11,7 @@ class CategoriesController extends \BaseController {
 	public function index()
 	{
 		$categories = Category::all();
+		/*$categories = Category::where('user_id','=', Auth::user()->id) -> get();*/
 		$this->layout->content = View::make('categories.index', compact('categories'));
 		
 	}
@@ -35,6 +36,7 @@ class CategoriesController extends \BaseController {
 	
 	public function store()
 	{
+
 		$input = Input::all();
 		$category = new Category($input);
  
@@ -54,6 +56,7 @@ class CategoriesController extends \BaseController {
 	 */
 	public function show(Category $category)
 	{
+	
 		$this->layout->content = View::make('categories.show', compact('category'));
 	}
 

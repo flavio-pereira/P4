@@ -15,12 +15,18 @@
                     <li>
                         <a href="/">Home</a>
                     </li>
+                    @if(Auth::check())
                     <li>
-                        <a href="/sign">Sign</a>
+                        <a href='/categories'>Recipe - Index</a>
                     </li>
                     <li>
-                        <a href="/categories">Recipe - Index</a>
+                        <a href='/logout'>Log out {{ Auth::user()->email; }}</a>
                     </li>
+                    @else
+                    <li><a href='/login'>Login</a></li>
+                    <li><a href='/signup'>Register</a></li>
+                    @endif
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

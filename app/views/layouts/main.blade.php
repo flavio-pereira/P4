@@ -32,6 +32,8 @@
     </div>
 
     @yield('body')
+
+    @yield('content')
     
   </body>
   

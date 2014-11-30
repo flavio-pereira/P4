@@ -23,8 +23,11 @@ Route::get('/', function()
 Route::get('/debug', 'DebugController@getDebug');
 
 /* User route */   
-Route::resource('users', 'UsersController');
-
+Route::get('/signup', 'UsersController@getSignup');
+Route::get('/login', 'UsersController@getLogin' );
+Route::post('/signup', ['before' => 'csrf', 'uses' => 'UsersController@postSignup'] );
+Route::post('/login', ['before' => 'csrf', 'uses' => 'UsersController@postLogin'] );
+Route::get('/logout', ['before' => 'auth', 'uses' => 'UsersController@getLogout'] );
 
 Route::bind('recipes', function($value, $route) {
 	return Recipe::whereName($value)->first();
