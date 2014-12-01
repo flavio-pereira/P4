@@ -10,8 +10,8 @@ class CategoriesController extends \BaseController {
 	 */
 	public function index()
 	{
-		$categories = Category::all();
-		/*$categories = Category::where('user_id','=', Auth::user()->id) -> get();*/
+		/*$categories = Category::all();*/
+		$categories = Category::where('user_id','=', Auth::user()->id) -> get();
 		$this->layout->content = View::make('categories.index', compact('categories'));
 		
 	}
@@ -36,9 +36,11 @@ class CategoriesController extends \BaseController {
 	
 	public function store()
 	{
-
 		$input = Input::all();
-		$category = new Category($input);
+		$category = new Category();
+		$category->name = $input['name']; 
+      	$category->description = $input['description'];
+      	$category->user_id = Auth::user()->id;
  
 		if ( $category->save() )
 			return Redirect::route('categories.index')->with('message', 'Category created.');

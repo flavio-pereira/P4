@@ -3,7 +3,7 @@
 class Recipe extends \LaravelBook\Ardent\Ardent {
 
 	public static $rules = array(
-		'name'			=> 'required|min:4',
+		'name'			=> 'required|min:2',
 		'recipe'		=> 'required',
 	);
 

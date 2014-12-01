@@ -3,7 +3,7 @@
 class Category extends \LaravelBook\Ardent\Ardent {
 
 	public static $rules = array(
-		'name'			=> 'required|min:3',
+		'name'			=> 'required|min:2',
 		'description'	=> 'required',
 	);
 
