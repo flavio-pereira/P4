@@ -12,6 +12,6 @@ class Recipe extends \LaravelBook\Ardent\Ardent {
 
 	public function categories()
 {
-	return $this->belongsTo('Category');
+	return $this->belongsTo('Category')->where('user_id','=', Auth::user()->id);
 }
 }

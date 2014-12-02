@@ -34,9 +34,12 @@ class RecipesController extends \BaseController {
 	public function store(Category $category)
 	{
 		$input = Input::all();
-		$input['category_id'] = $category->id;
-		$recipe = new Recipe($input);
- 
+		$recipe = new Recipe();
+		$recipe->name = $input['name'];
+		$recipe->recipe = $input['recipe'];
+		$recipe->user_id = Auth::user()->id;
+		$recipe->category_id = $category->id;
+		
 		if ( $recipe->save() )
 			return Redirect::route('categories.show', $category->name)->with('message', 'Recipe created.');
 		else
@@ -52,6 +55,7 @@ class RecipesController extends \BaseController {
 	 */
 	public function show(Category $category, Recipe $recipe)
 	{
+
 		$this->layout->content = View::make('recipes.show', compact('category', 'recipe'));
 	}
 
