@@ -7,11 +7,11 @@ class Category extends \LaravelBook\Ardent\Ardent {
 		'description'	=> 'required',
 	);
 
-	protected $fillable = ['name','description'];
+	protected $fillable = ['user_id','name','description'];
 
 	public function recipes() 
 	{
-		return $this->hasMany('Recipe');
+		return $this->hasMany('Recipe')->where('user_id','=', Auth::user()->id);
 	}
 
 }

@@ -58,7 +58,7 @@ class CategoriesController extends \BaseController {
 	 */
 	public function show(Category $category)
 	{
-	
+		
 		$this->layout->content = View::make('categories.show', compact('category'));
 	}
 
