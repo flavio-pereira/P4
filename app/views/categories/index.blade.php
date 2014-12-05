@@ -1,19 +1,21 @@
 @section('body')
-<p>Here you can see your catergories. If you don't have any, go ahead and create your category: {{ link_to_route('categories.create', 'Create a new Category') }} </p>
-<div class="col-sm-10">
-	<h2>Categories</h2>
-	@if ( !$categories->count() )
-		<p>You have no categories</p>
-</div>
+<div class="container">
+	<div class="page-header">
+		<h2 class="text-center">Books</h2>
+	</div>
+		@if ( !$categories->count() )
+		<p class="text-center">You have no books</p>
+		<p class="text-center">Before you type your Recipe, you need to create your Recipe's Book!</p>
 	@else
 			@foreach( $categories as $category )
-				<div class="col-sm-10">
-						<h3><a href="{{ route('categories.show', $category->name) }}">{{ $category->name }}</a> </h3>
-					    {{ Form::open(array('class' => 'inline', 'method' => 'DELETE', 'route' => array('categories.destroy', $category->name))) }}
+						<h3><a href="{{ route('categories.show', $category->name) }}">{{ $category->name }}</a>
+					    {{ Form::open(array('class' => 'form-horizontal', 'method' => 'DELETE', 'route' => array('categories.destroy', $category->name))) }}
 						{{ link_to_route('categories.edit', 'Edit', array($category->name), array('class' => 'btn btn-info btn-xs')) }}
 						{{ Form::submit('Delete', array('class' => 'btn btn-danger btn-xs')) }}
-						{{ Form::close() }}
-				</div>
+						{{ Form::close() }}</h3>
 			@endforeach
+	
 	@endif
+</div>
+<h2 class="text-center">{{ link_to_route('categories.create', 'New Book', null, array('class'=>'btn btn-primary')) }}</h2>
 @stop

@@ -17,10 +17,10 @@
                     </li>
                     @if(Auth::check())
                     <li>
-                        <a href='/categories'>Recipe - Index</a>
+                        <a href='/categories'>Recipes</a>
                     </li>
                     <li>
-                        <a href='/logout'>Log out {{ Auth::user()->email; }}</a>
+                        <a href='/logout'>Logout {{ Auth::user()->name; }}</a>
                     </li>
                     @else
                     <li><a href='/login'>Login</a></li>

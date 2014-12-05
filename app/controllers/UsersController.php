@@ -30,6 +30,7 @@ class UsersController extends BaseController {
 
 		# Step 1) Define the rules
 		$rules = array(
+			'name' => 'required',
 			'email' => 'required|email|unique:users,email',
 			'password' => 'required|min:6'
 		);
@@ -47,6 +48,7 @@ class UsersController extends BaseController {
 		}
 
 		$user = new User;
+		$user->name 	= Input::get('name');
 		$user->email    = Input::get('email');
 		$user->password = Hash::make(Input::get('password'));
 
@@ -85,7 +87,7 @@ class UsersController extends BaseController {
 		$credentials = Input::only('email', 'password');
 
 		if (Auth::attempt($credentials, $remember = true)) {
-			return Redirect::intended('/')->with('message', 'Welcome Back!');
+			return Redirect::intended('/')->with('message', 'Welcome Back');
 		}
 		else {
 			return Redirect::to('/login')

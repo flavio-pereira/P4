@@ -20,8 +20,8 @@
                 <br />
                 <br />
                 @if (Session::has('message'))
-                <div class="flash alert">
-                    <p class="bg-info">{{ Session::get('message') }}</p>
+                <div class="alert">
+                    <h4 class="bg-info text-center">{{ Session::get('message') }}</h4>
                 </div>
             @endif
             @if ($errors->any())
