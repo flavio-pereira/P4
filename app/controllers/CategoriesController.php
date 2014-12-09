@@ -43,7 +43,7 @@ class CategoriesController extends \BaseController {
       	$category->user_id = Auth::user()->id;
  
 		if ( $category->save() )
-			return Redirect::route('categories.index')->with('message', 'Category created.');
+			return Redirect::route('categories.index')->with('message', 'Book created.');
 		else
 			return Redirect::route('categories.create')->withInput()->withErrors( $category->errors() );
 	}
@@ -87,7 +87,7 @@ class CategoriesController extends \BaseController {
 		$category->fill($input);
  
 		if ( $category->updateUniques() )
-			return Redirect::route('categories.show', $category->name)->with('message', 'Category updated.');
+			return Redirect::route('categories.show', $category->name)->with('message', 'Book updated.');
 		else
 			return Redirect::route('categories.edit', array_get($category->getOriginal(), 'name'))->withInput()->withErrors( $category->errors() );
 	}
@@ -102,7 +102,7 @@ class CategoriesController extends \BaseController {
 	public function destroy(Category $category)
 	{
 		$category->delete();
-		return Redirect::route('categories.index')->with('message', 'Category deleted.');
+		return Redirect::route('categories.index')->with('message', 'Book deleted.');
 	}
 
 

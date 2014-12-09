@@ -1,9 +1,12 @@
 @section('body')
-	<h2>Create Category</h2>
+<div class="container">
+    <div class="page-header">
+        <h2 class="text-center">Create your Recipe Book</h2>
+    </div>
 
-	<p> Here you can create the category where your recipe will be located. You can create a category called Pie and then all the recipes related with Pie will be under that Category.</p>
-
-	{{ Form::model(new Category, ['route' => ['categories.store']]) }}
-		@include('layouts/formcategory', ['submit_text' => 'Create Category'])
-	{{ Form::close() }}
+    <div class="form-group">
+			{{ Form::model(new Category, ['route' => 'categories.store', 'class' => 'form-horizontal']) }}
+				@include('layouts/formcategory', ['submit_text' => 'Create Book'])
+			{{ Form::close() }}
+	</div>
 @stop
