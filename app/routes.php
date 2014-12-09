@@ -19,8 +19,9 @@ Route::get('/', function()
 
 
 
-/* Debug Route */
+/* Debug Route
 Route::get('/debug', 'DebugController@getDebug');
+*/
 
 /* User route */   
 Route::get('/signup', 'UsersController@getSignup');
