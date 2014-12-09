@@ -64,7 +64,7 @@ class UsersController extends BaseController {
 		# Log in
 		Auth::login($user);
 
-		return Redirect::to('/')->with('message', 'Welcome to your Recipe Book!');
+		return Redirect::to('/')->with('message', 'Welcome to Recipe Book!');
 
 	}
 
