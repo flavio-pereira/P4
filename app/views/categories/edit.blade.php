@@ -10,7 +10,7 @@
     <div class="page-header">
         <h2 class="text-center">Edit your Book</h2>
      </div>
-	{{ Form::model($category, ['method' => 'PATCH', 'route' => ['categories.update', $category->name]]) }}
+	{{ Form::model($category, ['method' => 'PATCH', 'route' => ['categories.update', $category->name], 'class' => 'form-horizontal']) }}
 		@include('layouts/formcategory', ['submit_text' => 'Edit Category'])
 	{{ Form::close() }}
 </div>
