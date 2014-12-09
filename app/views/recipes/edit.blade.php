@@ -6,9 +6,12 @@
 @stop
 
 @section('body')
-	<h2>Edit Recipe "{{ $recipe->name }}"</h2>
-
-	{{ Form::model($recipe, ['method' => 'PATCH', 'route' => ['categories.recipes.update', $category->name, $recipe->name]]) }}
+<div class="container">
+    <div class="page-header">
+        <h2 class="text-center">Edit Recipe "{{ $recipe->name }}"</h2>
+    </div>
+	{{ Form::model($recipe, ['method' => 'PATCH', 'route' => ['categories.recipes.update', $category->name, $recipe->name], 'class' => 'form-horizontal']) }}
 		@include('layouts/formrecipe', ['submit_text' => 'Edit Recipe'])
 	{{ Form::close() }}
+</div>
 @stop
