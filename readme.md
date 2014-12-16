@@ -14,7 +14,7 @@ If you started this course at a more advanced level and your confidence in the m
 
 Welcome to My Recipe Book! Here you can register all your recipes and easily access them when you need. You can divide your recipes in books and then create all your recipes under your favorite book.
 
-History: My wife has recipe blog and would like to build something that she can use as feature in her blog. Here is the blog: http://claudiasrecipe.blogspot.com/
+History: My wife has a recipe blog and I decided to build something that she can use as feature in her blog. This is the original blog: http://claudiasrecipe.blogspot.com/
 
 
 ### Github and Live URL:
@@ -39,6 +39,6 @@ Fast Workflow in Laravel With Custom Generators: https://github.com/JeffreyWay/L
 
 ### Final Considerations
 
-Despite my lack of knowlage in programing, I think I did a good job trying to create this application. Like I said in P1, I was up for the chalenge. I really enjoyed Laravel and how it make the integration with databases easy.  I'm sure will keep working with that on the future in order to improve the blog. 
+Despite my lack of knowledge in programing, I think I did a good job trying to create this application. Like I said in P1, I was up for the challenge. I really enjoyed Laravel and how it make the integration with databases easy. I'm sure will keep working with that on the future in order to improve the blog.
 
 Thank you Susan and all the TA's, in special Jeremy who helped me a lot during this class. 
