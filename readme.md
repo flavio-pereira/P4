@@ -1,25 +1,43 @@
-## Laravel PHP Framework
+## P4: Final Project  - Flavio Pereira
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+### Goals of this project:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+This project is open-ended. Whatever you create, the main expectation is that the project meets the following criteria:
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+1. Uses PHP/Laravel.
+2. Uses a database with at least 2 tables. This count does not include a users table, but does include pivot tables.
+3. Demonstrates all 4 CRUD interactions (user signup/login does not count towards this).
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+If you started this course at a more advanced level and your confidence in the material is high, you are encouraged to create an app of your choosing. The sky is the limit.
 
-## Official Documentation
+### Project Name:  My Recipe Book! 
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+Welcome to My Recipe Book! Here you can register all your recipes and easily access them when you need. You can divide your recipes in books and then create all your recipes under your favorite book.
 
-### Contributing To Laravel
+History: My wife has recipe blog and would like to build something that she can use as feature in her blog. Here is the blog: http://claudiasrecipe.blogspot.com/
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+### Github and Live URL:
 
-### License
+Github link: https://github.com/flavio-pereira/P4
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+P3 live URL: http://p4.pezao.me
+
+### Demo Video:
+
+Video: 
+
+### Outside Code:
+
+Bootstrap: http://getbootstrap.com/
+
+Image: http://3.bp.blogspot.com/-cySqHCIQ-EQ/T0r0Cpl_0SI/AAAAAAAAAUc/1me_JrB4znQ/s1600/dulce-de-leche-cupcake_claudiasrecipe.jpg
+
+Self-validating, secure and smart models for Laravel 4's Eloquent O/RM : https://github.com/laravelbook/ardent
+
+Fast Workflow in Laravel With Custom Generators: https://github.com/JeffreyWay/Laravel-4-Generators
+
+### Final Considerations
+
+Despite my lack of knowlage in programing, I think I did a good job trying to create this application. Like I said in P1, I was up for the chalenge. I really enjoyed Laravel and how it make the integration with databases easy.  I'm sure will keep working with that on the future in order to improve the blog. 
+
+Thank you Susan and all the TA's, in special Jeremy who helped me a lot during this class. 

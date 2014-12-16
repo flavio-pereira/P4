@@ -2,7 +2,7 @@
 <html>
   <head>
 
-    <title>@yield('title',"Book Recipes")</title>
+    <title>@yield('title',"My Book Recipes")</title>
     <meta charset='utf-8'>
     
     <link rel="icon" type="image/icon" href="images/favicon.ico">
