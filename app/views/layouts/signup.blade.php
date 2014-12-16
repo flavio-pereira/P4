@@ -7,7 +7,7 @@
 @section('content')
 <div class="container">
     <div class="page-header">
-        <h2 class="text-center">Welcome to Recipe Book</h2>
+        <h2 class="text-center">Welcome to My Recipe Book</h2>
     </div>
 
     {{ Form::open(array('url' => ('/signup'), 'class'=>'form-horizontal', 'role'=>'form')) }}
