@@ -41,4 +41,4 @@ Fast Workflow in Laravel With Custom Generators: https://github.com/JeffreyWay/L
 
 Despite my lack of knowledge in programing, I think I did a good job trying to create this application. Like I said in P1, I was up for the challenge. I really enjoyed Laravel and how it make the integration with databases easy. I'm sure will keep working with that on the future in order to improve the blog.
 
-Thank you Susan and all the TA's, in special Jeremy who helped me a lot during this class. 
+Thank you Susan and all the TA's, in special Jeremy who helped me a lot during this class.
