@@ -21,7 +21,7 @@ History: My wife has a recipe blog and I decided to build something that she can
 
 Github link: https://github.com/flavio-pereira/P4
 
-P3 live URL: http://p4.pezao.me
+P4 live URL: http://p4.pezao.me
 
 ### Demo Video:
 
