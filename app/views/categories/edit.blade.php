@@ -11,7 +11,7 @@
         <h2 class="text-center">Edit your Book</h2>
      </div>
 	{{ Form::model($category, ['method' => 'PATCH', 'route' => ['categories.update', $category->name], 'class' => 'form-horizontal']) }}
-		@include('layouts/formcategory', ['submit_text' => 'Edit Category'])
+		@include('layouts/formcategory', ['submit_text' => 'Edit Book'])
 	{{ Form::close() }}
 </div>
 @stop
